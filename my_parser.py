@@ -1,4 +1,6 @@
 import datetime
+import webbrowser
+
 import requests
 import aiofiles
 import asyncio

@@ -2,11 +2,15 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.dispatcher.filters import Text
 from aiofiles import os
 from stores import selected_stores
-from parser import collect_data
+from my_parser import collect_data
 
 token = "5387713157:AAHc0bfR2F8m1WzPiCfPa4_ACi0K39VCZV4"
 bot = Bot(token=token)
 dp = Dispatcher(bot)
+
+
+def main():
+    executor.start_polling(dp)
 
 
 @dp.message_handler(commands='start')
@@ -47,10 +51,3 @@ async def sadovaya_street(message: types.Message):
 @dp.message_handler(Text(equals=selected_stores.get('5415')))
 async def english_prospect(message: types.Message):
     await send_message(message=message, shop_id='5415')
-
-
-def main():
-    executor.start_polling(dp)
-
-if __name__ == '__main__':
-    main()
