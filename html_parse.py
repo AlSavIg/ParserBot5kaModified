@@ -6,7 +6,7 @@ import aiofiles
 import asyncio
 from aiocsv import AsyncWriter
 
-selected_store_names = {
+selected_stores = {
     '28870': 'Косыгина, 31',
     '7215': 'Наставников пр, 3',
     '7179': 'Садовая, 69 лит.А'
@@ -72,7 +72,7 @@ async def collect_data(shop_id):
 
         data.append([card_name, card_discount_price, card_discount, card_old_price, card_sale_date])
 
-    async with aiofiles.open(f'{selected_store_names[shop_id]}_{cur_time}.csv', 'w',
+    async with aiofiles.open(f'{selected_stores[shop_id]}_{cur_time}.csv', 'w',
                              encoding='utf-8',
                              newline='') as file:
         writer = AsyncWriter(file)
@@ -88,7 +88,7 @@ async def collect_data(shop_id):
         )
         await writer.writerows(data)
 
-    return f'{selected_store_names[shop_id]}_{cur_time}.csv'
+    return f'{selected_stores[shop_id]}_{cur_time}.csv'
 
 
 async def main():
