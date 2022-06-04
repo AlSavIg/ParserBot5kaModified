@@ -3,15 +3,11 @@ import requests
 import aiofiles
 import asyncio
 from aiocsv import AsyncWriter
+from stores import selected_stores
 
 items_on_page = 30
 page = 1
 url = 'EMPTY'
-selected_stores = {
-    '33YU': 'Косыгина, 31',
-    '5677': 'Наставников пр, 3',
-    '5593': 'Садовая, 69 лит.А'
-}
 
 
 def get_data(local_url):
