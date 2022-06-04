@@ -51,3 +51,9 @@ async def sadovaya_street(message: types.Message):
 @dp.message_handler(Text(equals=selected_stores.get('5415')))
 async def english_prospect(message: types.Message):
     await send_message(message=message, shop_id='5415')
+
+
+@dp.message_handler(Text(equals=selected_stores.get('5600')))
+async def shop5600(message: types.Message):
+    await send_message(message=message, shop_id='5600')
+            

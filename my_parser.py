@@ -80,7 +80,7 @@ async def collect_data(shop_id):
 
 
 async def main():
-    await collect_data(shop_id='5593')
+    await collect_data(shop_id='5600')
 
 
 if __name__ == '__main__':
