@@ -66,4 +66,3 @@ async def shop324M(message: types.Message):
 @dp.message_handler(Text(equals=selected_stores.get('323W')))
 async def shop323W(message: types.Message):
     await send_message(message=message, shop_id='323W')
-            
