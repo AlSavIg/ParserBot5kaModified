@@ -57,3 +57,13 @@ async def english_prospect(message: types.Message):
 async def shop5600(message: types.Message):
     await send_message(message=message, shop_id='5600')
             
+
+@dp.message_handler(Text(equals=selected_stores.get('324M')))
+async def shop324M(message: types.Message):
+    await send_message(message=message, shop_id='324M')
+            
+
+@dp.message_handler(Text(equals=selected_stores.get('323W')))
+async def shop323W(message: types.Message):
+    await send_message(message=message, shop_id='323W')
+            
