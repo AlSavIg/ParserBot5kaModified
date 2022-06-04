@@ -34,22 +34,22 @@ async def send_message(message, shop_id):
 
 
 @dp.message_handler(Text(equals=selected_stores.get('5677')))
-async def nastavnikov_street(message: types.Message):
+async def shop5677(message: types.Message):
     await send_message(message=message, shop_id='5677')
 
 
 @dp.message_handler(Text(equals=selected_stores.get('33YU')))
-async def kosigina_street(message: types.Message):
+async def shop33YU(message: types.Message):
     await send_message(message=message, shop_id='33YU')
 
 
 @dp.message_handler(Text(equals=selected_stores.get('5593')))
-async def sadovaya_street(message: types.Message):
+async def shop5593(message: types.Message):
     await send_message(message=message, shop_id='5593')
 
 
 @dp.message_handler(Text(equals=selected_stores.get('5415')))
-async def english_prospect(message: types.Message):
+async def shop5415(message: types.Message):
     await send_message(message=message, shop_id='5415')
 
 
