@@ -2,7 +2,6 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.dispatcher.filters import Text
 from aiofiles import os
 from json_parse import collect_data, selected_stores
-# from html_parse import collect_data, selected_stores
 
 token = "5387713157:AAHc0bfR2F8m1WzPiCfPa4_ACi0K39VCZV4"
 bot = Bot(token=token)
