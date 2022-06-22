@@ -16,21 +16,6 @@ async def start(message: types.Message):
     await message.answer('Пожалуйста, выберите магазин', reply_markup=keyboard)
 
 
-@dp.message_handler(Text(equals=selected_stores.get('5677')))
-async def nastavnikov_street(message: types.Message):
-    await send_message(message=message, shop_id='5677')
-
-
-@dp.message_handler(Text(equals=selected_stores.get('33YU')))
-async def kosigina_street(message: types.Message):
-    await send_message(message=message, shop_id='33YU')
-
-
-@dp.message_handler(Text(equals=selected_stores.get('5593')))
-async def sadovaya_street(message: types.Message):
-    await send_message(message=message, shop_id='5593')
-
-
 async def send_data(shop_id, chat_id):
     file = await collect_data(shop_id=shop_id)
     await bot.send_document(chat_id=chat_id, document=open(file, 'rb'))
@@ -41,6 +26,21 @@ async def send_message(message, shop_id):
     await message.answer('Ожидайте...')
     chat_id = message.chat.id
     await send_data(shop_id=shop_id, chat_id=chat_id)
+
+
+@dp.message_handler(Text(equals=selected_stores.get('5677')))
+async def shop5677(message: types.Message):
+    await send_message(message=message, shop_id='5677')
+
+
+@dp.message_handler(Text(equals=selected_stores.get('33YU')))
+async def shop33YU(message: types.Message):
+    await send_message(message=message, shop_id='33YU')
+
+
+@dp.message_handler(Text(equals=selected_stores.get('5593')))
+async def shop5593(message: types.Message):
+    await send_message(message=message, shop_id='5593')
 
 
 def main():
